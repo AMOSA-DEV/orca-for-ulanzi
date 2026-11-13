@@ -1,0 +1,346 @@
+{
+  "Controllers": [
+    {
+      "Actions": {
+        "2_3": {
+          "Action": "com.potaler.orca.navigation.workspaceDial",
+          "ActionID": "423bd66e-e1be-456f-bab6-173d669acd99",
+          "ActionParam": {},
+          "LinkedTitle": true,
+          "Name": "워크트리 탐색 다이얼",
+          "Plugin": {
+            "Name": "Orca",
+            "UUID": "com.potaler.orca.navigation",
+            "Version": "0.0.1"
+          },
+          "ViewParam": [
+            {
+              "IconRel": "",
+              "Name": "워크트리 탐색 다이얼",
+              "Title": "워크트리 탐색 다이얼"
+            }
+          ]
+        },
+        "3_3": {
+          "Action": "com.potaler.orca.navigation.chatDial",
+          "ActionID": "1629deb7-90ee-47d5-9f70-546b2f9fe862",
+          "ActionParam": {},
+          "LinkedTitle": true,
+          "Name": "탭 탐색 다이얼(모든 유형)",
+          "Plugin": {
+            "Name": "Orca",
+            "UUID": "com.potaler.orca.navigation",
+            "Version": "0.0.1"
+          },
+          "ViewParam": [
+            {
+              "IconRel": "",
+              "Name": "탭 탐색 다이얼(모든 유형)",
+              "Title": "탭 탐색 다이얼(모든 유형)"
+            }
+          ]
+        },
+        "4_3": {
+          "Action": "com.potaler.orca.navigation.wheelDial",
+          "ActionID": "b5390b92-54c5-4b2a-a385-5a352993bb46",
+          "ActionParam": {},
+          "LinkedTitle": true,
+          "Name": "마우스 휠",
+          "Plugin": {
+            "Name": "Orca",
+            "UUID": "com.potaler.orca.navigation",
+            "Version": "0.0.1"
+          },
+          "ViewParam": [
+            {
+              "IconRel": "",
+              "Name": "마우스 휠",
+              "Title": "마우스 휠"
+            }
+          ]
+        }
+      },
+      "Type": "Encoder"
+    },
+    {
+      "Actions": {
+        "0_0": {
+          "Action": "com.potaler.orca.navigation.cancel",
+          "ActionID": "92bebac2-5034-4baf-8def-ca9ce9621e72",
+          "ActionParam": {},
+          "LinkedTitle": true,
+          "Name": "취소 (Esc)",
+          "Plugin": {
+            "Name": "Orca",
+            "UUID": "com.potaler.orca.navigation",
+            "Version": "0.0.1"
+          },
+          "ViewParam": [
+            {
+              "Icon": "Images/cancel.png",
+              "IconRel": "",
+              "Name": "취소 (Esc)",
+              "Title": "취소 (Esc)"
+            }
+          ]
+        },
+        "0_1": {
+          "Action": "com.potaler.orca.navigation.workspacePrevious",
+          "ActionID": "2f353c46-c249-426b-a84e-3c608dad1cb6",
+          "ActionParam": {},
+          "LinkedTitle": true,
+          "Name": "왼쪽 목록 이전",
+          "Plugin": {
+            "Name": "Orca 탐색 (실험판)",
+            "UUID": "com.potaler.orca.navigation",
+            "Version": "0.0.1"
+          },
+          "ViewParam": [
+            {
+              "Icon": "Images/workspacePrevious.png",
+              "IconRel": "",
+              "Name": "왼쪽 목록 이전",
+              "Text": "",
+              "Title": "왼쪽 목록 이전"
+            }
+          ]
+        },
+        "0_2": {
+          "Action": "com.potaler.orca.navigation.workspaceNext",
+          "ActionID": "1cf6f30d-ea63-4c72-b024-10e6153af0a1",
+          "ActionParam": {},
+          "LinkedTitle": true,
+          "Name": "왼쪽 목록 다음",
+          "Plugin": {
+            "Name": "Orca 탐색 (실험판)",
+            "UUID": "com.potaler.orca.navigation",
+            "Version": "0.0.1"
+          },
+          "ViewParam": [
+            {
+              "Icon": "Images/workspaceNext.png",
+              "IconRel": "",
+              "Name": "왼쪽 목록 다음",
+              "Title": "왼쪽 목록 다음"
+            }
+          ]
+        },
+        "0_3": {
+          "Action": "com.ulanzi.ulanzideck.page.prev",
+          "ActionID": "bca04c7f-a657-4287-8027-032a6f5a152c",
+          "ActionParam": {},
+          "LinkedTitle": true,
+          "Name": "이전 페이지",
+          "Plugin": {
+            "Name": "페이지",
+            "UUID": "com.ulanzi.deck.page",
+            "Version": "1.0"
+          },
+          "ViewParam": [
+            {
+              "Icon": "Images/btn_previousPage.png",
+              "IconRel": ""
+            }
+          ]
+        },
+        "1_1": {
+          "Action": "com.potaler.orca.navigation.chatPrevious",
+          "ActionID": "7152b6c6-db90-400b-ac15-6afdef7674de",
+          "ActionParam": {},
+          "LinkedTitle": true,
+          "Name": "대화 탭 이전",
+          "Plugin": {
+            "Name": "Orca 탐색 (실험판)",
+            "UUID": "com.potaler.orca.navigation",
+            "Version": "0.0.1"
+          },
+          "ViewParam": [
+            {
+              "Icon": "Images/chatPrevious.png",
+              "IconRel": "",
+              "Name": "대화 탭 이전",
+              "Title": "대화 탭 이전"
+            }
+          ]
+        },
+        "1_3": {
+          "Action": "com.ulanzi.ulanzideck.page.next",
+          "ActionID": "0e648d7d-10ad-42a2-9ec4-d816c0a144d1",
+          "ActionParam": {},
+          "LinkedTitle": true,
+          "Name": "다음 페이지",
+          "Plugin": {
+            "Name": "페이지",
+            "UUID": "com.ulanzi.deck.page",
+            "Version": "1.0"
+          },
+          "ViewParam": [
+            {
+              "Icon": "Images/btn_nextPage.png",
+              "IconRel": ""
+            }
+          ]
+        },
+        "2_0": {
+          "Action": "com.potaler.orca.navigation.launch",
+          "ActionID": "3c250116-8883-4c90-b0d2-92d3ba05a47c",
+          "ActionParam": {},
+          "LinkedTitle": true,
+          "Name": "Orca 실행",
+          "Plugin": {
+            "Name": "Orca 탐색 (실험판)",
+            "UUID": "com.potaler.orca.navigation",
+            "Version": "0.0.1"
+          },
+          "ViewParam": [
+            {
+              "Icon": "Images/orca.png",
+              "IconRel": "",
+              "Name": "Orca 실행",
+              "Title": "Orca"
+            }
+          ]
+        },
+        "2_1": {
+          "Action": "com.potaler.orca.navigation.newAgent",
+          "ActionID": "bcf4eac2-5cca-478b-91ff-fc6e29143f0c",
+          "ActionParam": {},
+          "LinkedTitle": true,
+          "Name": "새 에이전트 탭",
+          "Plugin": {
+            "Name": "Orca",
+            "UUID": "com.potaler.orca.navigation",
+            "Version": "0.0.1"
+          },
+          "ViewParam": [
+            {
+              "Icon": "Images/newAgent.png",
+              "IconRel": "",
+              "Name": "새 에이전트 탭",
+              "Title": "새 에이전트 탭"
+            }
+          ]
+        },
+        "2_2": {
+          "Action": "com.potaler.orca.navigation.dictation",
+          "ActionID": "7ced45d3-ecaa-4881-b8e0-d5ee5ef6d23b",
+          "ActionParam": {},
+          "LinkedTitle": true,
+          "Name": "받아쓰기",
+          "Plugin": {
+            "Name": "Orca",
+            "UUID": "com.potaler.orca.navigation",
+            "Version": "0.0.1"
+          },
+          "ViewParam": [
+            {
+              "Icon": "Images/dictation.png",
+              "IconRel": "",
+              "Name": "받아쓰기",
+              "Title": "받아쓰기"
+            }
+          ]
+        },
+        "3_0": {
+          "Action": "com.potaler.orca.navigation.leftPanel",
+          "ActionID": "0f51b348-fb53-4dc9-b12b-c0c215e2ef7f",
+          "ActionParam": {},
+          "LinkedTitle": true,
+          "Name": "좌측 사이드바 표시/숨기기",
+          "Plugin": {
+            "Name": "Orca",
+            "UUID": "com.potaler.orca.navigation",
+            "Version": "0.0.1"
+          },
+          "ViewParam": [
+            {
+              "Icon": "Images/leftPanel.png",
+              "IconRel": "",
+              "Name": "좌측 사이드바 표시/숨기기",
+              "Title": "좌측 사이드바 표시/숨기기"
+            }
+          ]
+        },
+        "3_1": {
+          "Action": "com.potaler.orca.navigation.chatNext",
+          "ActionID": "c501329b-8e4d-4e07-910f-3c1df5198327",
+          "ActionParam": {},
+          "LinkedTitle": true,
+          "Name": "대화 탭 다음",
+          "Plugin": {
+            "Name": "Orca 탐색 (실험판)",
+            "UUID": "com.potaler.orca.navigation",
+            "Version": "0.0.1"
+          },
+          "ViewParam": [
+            {
+              "Icon": "Images/chatNext.png",
+              "IconRel": "",
+              "Name": "대화 탭 다음",
+              "Title": "대화 탭 다음"
+            }
+          ]
+        },
+        "3_2": {
+          "Action": "com.ulanzi.ulanzideck.smallwindow.window",
+          "ActionID": "b15aea03-106c-4007-8e41-f5352dd88a57",
+          "ActionParam": {
+            "SmallViewMode": 1
+          },
+          "LinkedTitle": true,
+          "Name": "배경 설정",
+          "Plugin": {},
+          "ViewParam": [
+            {
+              "Icon": "",
+              "IconRel": ""
+            }
+          ]
+        },
+        "4_0": {
+          "Action": "com.potaler.orca.navigation.rightPanel",
+          "ActionID": "2d5c0362-185a-418c-ba5e-dda194b65b90",
+          "ActionParam": {},
+          "LinkedTitle": true,
+          "Name": "우측 사이드바 표시/숨기기",
+          "Plugin": {
+            "Name": "Orca",
+            "UUID": "com.potaler.orca.navigation",
+            "Version": "0.0.1"
+          },
+          "ViewParam": [
+            {
+              "Icon": "Images/rightPanel.png",
+              "IconRel": "",
+              "Name": "우측 사이드바 표시/숨기기",
+              "Title": "우측 사이드바 표시/숨기기"
+            }
+          ]
+        },
+        "4_1": {
+          "Action": "com.potaler.orca.navigation.confirm",
+          "ActionID": "b408542a-3f4f-4f25-bf10-319502013714",
+          "ActionParam": {},
+          "LinkedTitle": true,
+          "Name": "확인 (Enter)",
+          "Plugin": {
+            "Name": "Orca",
+            "UUID": "com.potaler.orca.navigation",
+            "Version": "0.0.1"
+          },
+          "ViewParam": [
+            {
+              "Icon": "Images/confirm.png",
+              "IconRel": "",
+              "Name": "확인 (Enter)",
+              "Title": "확인 (Enter)"
+            }
+          ]
+        }
+      },
+      "Type": "Keypad"
+    }
+  ],
+  "Icon": "",
+  "Name": ""
+}

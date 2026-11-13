@@ -1,0 +1,148 @@
+{
+  "Name": "Orca",
+  "Category": "Orca",
+  "Description": "D200X 버튼과 노브로 Orca 워크트리·탭·사이드바를 조작하고 스크롤합니다.",
+  "Actions": [
+    {
+      "Name": "Orca 열기",
+      "Tooltip": "Orca를 실행하거나 앞으로 가져옵니다.",
+      "States": [
+        {
+          "Name": "Orca 열기",
+          "Title": "Orca"
+        }
+      ]
+    },
+    {
+      "Name": "이전 워크트리",
+      "Tooltip": "Orca에서 탐색합니다. 끝에서는 순환합니다.",
+      "States": [
+        {
+          "Name": "이전 워크트리",
+          "Title": "이전 워크트리"
+        }
+      ]
+    },
+    {
+      "Name": "다음 워크트리",
+      "Tooltip": "Orca에서 탐색합니다. 끝에서는 순환합니다.",
+      "States": [
+        {
+          "Name": "다음 워크트리",
+          "Title": "다음 워크트리"
+        }
+      ]
+    },
+    {
+      "Name": "이전 탭(모든 유형)",
+      "Tooltip": "Orca에서 탐색합니다. 끝에서는 순환합니다.",
+      "States": [
+        {
+          "Name": "이전 탭(모든 유형)",
+          "Title": "이전 탭(모든 유형)"
+        }
+      ]
+    },
+    {
+      "Name": "다음 탭(모든 유형)",
+      "Tooltip": "Orca에서 탐색합니다. 끝에서는 순환합니다.",
+      "States": [
+        {
+          "Name": "다음 탭(모든 유형)",
+          "Title": "다음 탭(모든 유형)"
+        }
+      ]
+    },
+    {
+      "Name": "워크트리 탐색 다이얼",
+      "Tooltip": "Orca에서 탐색합니다. 끝에서는 순환합니다.",
+      "States": [
+        {
+          "Name": "워크트리 탐색 다이얼",
+          "Title": "워크트리 탐색 다이얼"
+        }
+      ]
+    },
+    {
+      "Name": "탭 탐색 다이얼(모든 유형)",
+      "Tooltip": "Orca에서 탐색합니다. 끝에서는 순환합니다.",
+      "States": [
+        {
+          "Name": "탭 탐색 다이얼(모든 유형)",
+          "Title": "탭 탐색 다이얼(모든 유형)"
+        }
+      ]
+    },
+    {
+      "Name": "좌측 사이드바 표시/숨기기",
+      "Tooltip": "⌘B / Ctrl+B",
+      "States": [
+        {
+          "Name": "좌측 사이드바 표시/숨기기",
+          "Title": "좌측 사이드바 표시/숨기기"
+        }
+      ]
+    },
+    {
+      "Name": "우측 사이드바 표시/숨기기",
+      "Tooltip": "⌘L / Ctrl+L",
+      "States": [
+        {
+          "Name": "우측 사이드바 표시/숨기기",
+          "Title": "우측 사이드바 표시/숨기기"
+        }
+      ]
+    },
+    {
+      "Name": "확인 (Enter)",
+      "Tooltip": "현재 포커스에 Enter를 보냅니다. 입력창에서는 메시지가 전송될 수 있습니다.",
+      "States": [
+        {
+          "Name": "확인 (Enter)",
+          "Title": "확인 (Enter)"
+        }
+      ]
+    },
+    {
+      "Name": "취소 (Esc)",
+      "Tooltip": "현재 포커스에 Esc를 보냅니다. 작업 중지·취소·메뉴 닫기는 Orca 상태에 따릅니다.",
+      "States": [
+        {
+          "Name": "취소 (Esc)",
+          "Title": "취소 (Esc)"
+        }
+      ]
+    },
+    {
+      "Name": "받아쓰기",
+      "Tooltip": "⌘E / Ctrl+E. Orca의 기존 음성 설정을 사용합니다.",
+      "States": [
+        {
+          "Name": "받아쓰기",
+          "Title": "받아쓰기"
+        }
+      ]
+    },
+    {
+      "Name": "새 에이전트 탭",
+      "Tooltip": "macOS: ⌘⌥T. Windows 기본 단축키는 없습니다.",
+      "States": [
+        {
+          "Name": "새 에이전트 탭",
+          "Title": "새 에이전트 탭"
+        }
+      ]
+    },
+    {
+      "Name": "마우스 휠",
+      "Tooltip": "왼쪽=위, 오른쪽=아래. 마우스 포인터 위치를 스크롤합니다. Orca를 자동 활성화하지 않습니다.",
+      "States": [
+        {
+          "Name": "마우스 휠",
+          "Title": "마우스 휠"
+        }
+      ]
+    }
+  ],
+  "Detail": "독립 제작 Ulanzi Studio용 플러그인입니다. Orca 열기, 이전·다음 워크트리와 모든 탭, 사이드바, Enter/Esc, 받아쓰기, 새 에이전트 탭, 탐색 노브와 마우스 휠을 제공합니다. 검증: D200X / Apple Silicon / macOS 27.0.1 / Orca 1.4.258 / Studio 3.4.8. Orca를 먼저 설치하세요. 프리셋은 별도 가져오기하고 앱 연결을 직접 지정합니다. Enter는 메시지를 전송할 수 있고 Esc는 포커스에 따릅니다. 휠은 포인터 위치를 스크롤합니다. Windows 실기 미검증, Intel Mac 휠 미지원. Orca·Ulanzi의 공식 제품이 아닙니다. Windows 지원을 제공합니다. 새 에이전트 탭은 macOS 전용입니다."
+}

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orca 탐색 설정</title>
+<style>
+body{margin:12px;background:transparent;color:#aaa;font:13px system-ui}label,input,button{display:block;box-sizing:border-box;width:100%;margin:8px 0}input,button{padding:8px;border:1px solid #666;border-radius:5px;background:#292929;color:#eee}p{line-height:1.5;overflow-wrap:anywhere}summary{cursor:pointer}
+</style>
+<p>Apple Silicon Mac은 화면 조회 없이 Orca에 키를 직접 전달합니다. Orca 창 하나를 열어 두세요. 탭(모든 유형) 이동은 열린 모든 탭 사이를 이동합니다. Orca 열기은 앱을 열거나 앞으로 가져옵니다.</p>
+<label for="cli">Orca CLI 경로</label>
+<input id="cli" type="text" placeholder="Windows·Intel Mac용 CLI 경로" spellcheck="false">
+<button id="save" disabled>저장</button>
+<p id="status" role="status">Studio 연결 중…</p>
+<details><summary>설정 도움말</summary><p>Windows·Intel Mac은 기존 CLI 경로를 사용하며 실기 미검증입니다. Windows는 CLI index.js 절대 경로 또는 네이티브 .exe를 지정하세요. .cmd와 셸 명령은 실행하지 않습니다. Apple Silicon Mac에서는 CLI 경로를 사용하지 않습니다.</p><p>워크트리 목록은 Mac에서 ⌘⇧0, Windows에서 Ctrl+Shift+0 후 ↑/↓, 탭(모든 유형)은 Mac에서 ⌘⇧[/], Windows에서 Ctrl+Shift+[/]를 전달합니다. 회전은 왼쪽=이전, 오른쪽=다음입니다. 누름·누른 채 회전은 사용하지 않습니다. 처리 중 추가 입력은 버립니다.</p><p>확인은 Enter, 취소는 Esc를 현재 포커스에 보냅니다. 입력창에서는 전송, 메뉴에서는 선택·닫기로 동작할 수 있습니다. 받아쓰기는 기존 음성 설정을 사용합니다. 새 에이전트 탭은 macOS 전용입니다.</p></details>
+<script src="i18n.js"></script>
+<script src="inspector.js"></script>
+</html>

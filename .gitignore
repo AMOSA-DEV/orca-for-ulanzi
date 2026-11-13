@@ -1,0 +1,15 @@
+# Generated packages and installed dependencies
+/dist/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Local settings and private workspace notes
+.env
+.env.*
+!.env.example
+AGENTS.md
+CLAUDE.md
+/.idea/
+/.vscode/

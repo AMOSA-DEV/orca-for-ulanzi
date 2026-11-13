@@ -1,0 +1,15 @@
+{
+  "Device": {
+    "Model": "D200X",
+    "UUID": "00000000-0000-0000-0000-000000000000"
+  },
+  "Icon": "Orca.png",
+  "Name": "Orca D200X (macOS)",
+  "Pages": {
+    "Current": "dcf144c5-a1ed-4eeb-9ba4-40c0ec83a358",
+    "Pages": [
+      "dcf144c5-a1ed-4eeb-9ba4-40c0ec83a358"
+    ]
+  },
+  "Version": "2.0"
+}

@@ -1,0 +1,26 @@
+{
+  "ko_KR": {
+    "Name": "Orca",
+    "Author": "AMOSA",
+    "Description": "D200X 버튼과 노브로 Orca 워크트리·탭·사이드바를 조작하고 스크롤합니다.",
+    "Detail": "독립 제작 Ulanzi Studio용 플러그인입니다. Orca 열기, 이전·다음 워크트리와 모든 탭, 사이드바, Enter/Esc, 받아쓰기, 새 에이전트 탭, 탐색 노브와 마우스 휠을 제공합니다. 검증: D200X / Apple Silicon / macOS 27.0.1 / Orca 1.4.258 / Studio 3.4.8. Orca를 먼저 설치하세요. 프리셋은 별도 가져오기하고 앱 연결을 직접 지정합니다. Enter는 메시지를 전송할 수 있고 Esc는 포커스에 따릅니다. 휠은 포인터 위치를 스크롤합니다. Windows 실기 미검증, Intel Mac 휠 미지원. Orca·Ulanzi의 공식 제품이 아닙니다. Windows 지원을 제공합니다. 새 에이전트 탭은 macOS 전용입니다."
+  },
+  "en": {
+    "Name": "Orca",
+    "Author": "AMOSA",
+    "Description": "Control Orca worktrees, tabs, sidebars and scrolling with D200X keys and dials.",
+    "Detail": "Independent Ulanzi Studio plugin: launch Orca, navigate worktrees and all tabs, toggle sidebars, Enter/Esc, dictation, new agent tab and 3 dial actions. Tested: D200X, Apple Silicon, macOS 27.0.1, Orca 1.4.258, Studio 3.4.8. Install Orca first. Import the profile separately; set its app association manually. Enter may send text; Esc follows focus; scrolling follows the pointer. Windows untested; Intel Mac wheel unsupported. Not an official Orca or Ulanzi product. Windows support is available; New Agent Tab is macOS-only."
+  },
+  "zh_CN": {
+    "Name": "Orca",
+    "Author": "AMOSA",
+    "Description": "使用 D200X 按键和旋钮控制 Orca 工作树、标签页、侧边栏和滚动。",
+    "Detail": "独立制作的 Ulanzi Studio 插件。支持启动 Orca、切换工作树与所有标签页、侧边栏切换、Enter/Esc、听写、新建智能体标签页、旋钮导航和滚动。验证：D200X / Apple Silicon / macOS 27.0.1 / Orca 1.4.258 / Studio 3.4.8。请先安装 Orca。预设需单独导入并手动关联应用。Enter 可能发送消息；Esc 取决于焦点。滚轮作用于指针位置。Windows 未经实机验证；Intel Mac 不支持滚轮。非 Orca 或 Ulanzi 官方产品。 Windows 支持已开放；新建智能体标签页仅支持 macOS。"
+  },
+  "ja_JP": {
+    "Name": "Orca",
+    "Author": "AMOSA",
+    "Description": "D200X のボタンとノブで Orca のワークツリー、タブ、サイドバー、スクロールを操作。",
+    "Detail": "Ulanzi Studio 用の独立制作プラグインです。Orca 起動、ワークツリーと全タブの移動、サイドバー切替、Enter/Esc、音声入力、新規エージェントタブ、ノブでの移動とスクロールに対応。確認：D200X / Apple Silicon / macOS 27.0.1 / Orca 1.4.258 / Studio 3.4.8。Orca を先にインストールしてください。プリセットは別途インポートし、アプリを手動で関連付けます。Enter はメッセージを送信する場合があり、Esc はフォーカスに従います。ホイールはポインター位置をスクロールします。Windows は実機未確認、Intel Mac のホイールは非対応。Orca・Ulanzi の公式製品ではありません。 Windows に対応。新規エージェントタブは macOS 専用です。"
+  }
+}

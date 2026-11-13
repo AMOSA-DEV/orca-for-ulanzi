@@ -1,0 +1,354 @@
+{
+  "Author": "AMOSA",
+  "Name": "Orca",
+  "Description": "D200X 버튼과 노브로 Orca 워크트리·탭·사이드바를 조작하고 스크롤합니다.",
+  "Version": "0.0.1",
+  "UUID": "com.potaler.orca.navigation",
+  "Type": "JavaScript",
+  "CodePath": "app.js",
+  "Icon": "assets/orca.png",
+  "Category": "Orca",
+  "CategoryIcon": "assets/orca.png",
+  "Software": {
+    "MinVersion": "3.3.0"
+  },
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "12.0"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Actions": [
+    {
+      "Name": "Orca 열기",
+      "Tooltip": "Orca를 실행하거나 앞으로 가져옵니다.",
+      "UUID": "com.potaler.orca.navigation.launch",
+      "Icon": "assets/orca.png",
+      "PropertyInspectorPath": "inspector.html",
+      "States": [
+        {
+          "Name": "Orca 열기",
+          "Image": "assets/orca.png",
+          "Title": "Orca"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false,
+      "Controllers": [
+        "Keypad"
+      ],
+      "Devices": [
+        "D200X"
+      ]
+    },
+    {
+      "Name": "이전 워크트리",
+      "Tooltip": "Orca에서 탐색합니다. 끝에서는 순환합니다.",
+      "UUID": "com.potaler.orca.navigation.workspacePrevious",
+      "Icon": "assets/workspacePrevious.png",
+      "PropertyInspectorPath": "inspector.html",
+      "States": [
+        {
+          "Name": "이전 워크트리",
+          "Image": "assets/workspacePrevious.png",
+          "Title": "이전 워크트리"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false,
+      "Controllers": [
+        "Keypad"
+      ],
+      "Devices": [
+        "D200X"
+      ]
+    },
+    {
+      "Name": "다음 워크트리",
+      "Tooltip": "Orca에서 탐색합니다. 끝에서는 순환합니다.",
+      "UUID": "com.potaler.orca.navigation.workspaceNext",
+      "Icon": "assets/workspaceNext.png",
+      "PropertyInspectorPath": "inspector.html",
+      "States": [
+        {
+          "Name": "다음 워크트리",
+          "Image": "assets/workspaceNext.png",
+          "Title": "다음 워크트리"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false,
+      "Controllers": [
+        "Keypad"
+      ],
+      "Devices": [
+        "D200X"
+      ]
+    },
+    {
+      "Name": "이전 탭(모든 유형)",
+      "Tooltip": "Orca에서 탐색합니다. 끝에서는 순환합니다.",
+      "UUID": "com.potaler.orca.navigation.chatPrevious",
+      "Icon": "assets/chatPrevious.png",
+      "PropertyInspectorPath": "inspector.html",
+      "States": [
+        {
+          "Name": "이전 탭(모든 유형)",
+          "Image": "assets/chatPrevious.png",
+          "Title": "이전 탭(모든 유형)"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false,
+      "Controllers": [
+        "Keypad"
+      ],
+      "Devices": [
+        "D200X"
+      ]
+    },
+    {
+      "Name": "다음 탭(모든 유형)",
+      "Tooltip": "Orca에서 탐색합니다. 끝에서는 순환합니다.",
+      "UUID": "com.potaler.orca.navigation.chatNext",
+      "Icon": "assets/chatNext.png",
+      "PropertyInspectorPath": "inspector.html",
+      "States": [
+        {
+          "Name": "다음 탭(모든 유형)",
+          "Image": "assets/chatNext.png",
+          "Title": "다음 탭(모든 유형)"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false,
+      "Controllers": [
+        "Keypad"
+      ],
+      "Devices": [
+        "D200X"
+      ]
+    },
+    {
+      "Name": "워크트리 탐색 다이얼",
+      "Tooltip": "Orca에서 탐색합니다. 끝에서는 순환합니다.",
+      "UUID": "com.potaler.orca.navigation.workspaceDial",
+      "Icon": "assets/workspaceDial.png",
+      "PropertyInspectorPath": "inspector.html",
+      "States": [
+        {
+          "Name": "워크트리 탐색 다이얼",
+          "Image": "assets/workspaceDial.png",
+          "Title": "워크트리 탐색 다이얼"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false,
+      "Controllers": [
+        "Encoder"
+      ],
+      "Devices": [
+        "D200",
+        "D200X",
+        "AU05"
+      ],
+      "Encoder": {
+        "layout": "$UA1"
+      }
+    },
+    {
+      "Name": "탭 탐색 다이얼(모든 유형)",
+      "Tooltip": "Orca에서 탐색합니다. 끝에서는 순환합니다.",
+      "UUID": "com.potaler.orca.navigation.chatDial",
+      "Icon": "assets/chatDial.png",
+      "PropertyInspectorPath": "inspector.html",
+      "States": [
+        {
+          "Name": "탭 탐색 다이얼(모든 유형)",
+          "Image": "assets/chatDial.png",
+          "Title": "탭 탐색 다이얼(모든 유형)"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false,
+      "Controllers": [
+        "Encoder"
+      ],
+      "Devices": [
+        "D200",
+        "D200X",
+        "AU05"
+      ],
+      "Encoder": {
+        "layout": "$UA1"
+      }
+    },
+    {
+      "Name": "좌측 사이드바 표시/숨기기",
+      "Tooltip": "⌘B / Ctrl+B",
+      "UUID": "com.potaler.orca.navigation.leftPanel",
+      "Icon": "assets/leftPanel.png",
+      "PropertyInspectorPath": "inspector.html",
+      "States": [
+        {
+          "Name": "좌측 사이드바 표시/숨기기",
+          "Image": "assets/leftPanel.png",
+          "Title": "좌측 사이드바 표시/숨기기"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false,
+      "Controllers": [
+        "Keypad"
+      ],
+      "Devices": [
+        "D200X"
+      ]
+    },
+    {
+      "Name": "우측 사이드바 표시/숨기기",
+      "Tooltip": "⌘L / Ctrl+L",
+      "UUID": "com.potaler.orca.navigation.rightPanel",
+      "Icon": "assets/rightPanel.png",
+      "PropertyInspectorPath": "inspector.html",
+      "States": [
+        {
+          "Name": "우측 사이드바 표시/숨기기",
+          "Image": "assets/rightPanel.png",
+          "Title": "우측 사이드바 표시/숨기기"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false,
+      "Controllers": [
+        "Keypad"
+      ],
+      "Devices": [
+        "D200X"
+      ]
+    },
+    {
+      "Name": "확인 (Enter)",
+      "Tooltip": "현재 포커스에 Enter를 보냅니다. 입력창에서는 메시지가 전송될 수 있습니다.",
+      "UUID": "com.potaler.orca.navigation.confirm",
+      "Icon": "assets/confirm.png",
+      "PropertyInspectorPath": "inspector.html",
+      "States": [
+        {
+          "Name": "확인 (Enter)",
+          "Image": "assets/confirm.png",
+          "Title": "확인 (Enter)"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false,
+      "Controllers": [
+        "Keypad"
+      ],
+      "Devices": [
+        "D200X"
+      ]
+    },
+    {
+      "Name": "취소 (Esc)",
+      "Tooltip": "현재 포커스에 Esc를 보냅니다. 작업 중지·취소·메뉴 닫기는 Orca 상태에 따릅니다.",
+      "UUID": "com.potaler.orca.navigation.cancel",
+      "Icon": "assets/cancel.png",
+      "PropertyInspectorPath": "inspector.html",
+      "States": [
+        {
+          "Name": "취소 (Esc)",
+          "Image": "assets/cancel.png",
+          "Title": "취소 (Esc)"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false,
+      "Controllers": [
+        "Keypad"
+      ],
+      "Devices": [
+        "D200X"
+      ]
+    },
+    {
+      "Name": "받아쓰기",
+      "Tooltip": "⌘E / Ctrl+E. Orca의 기존 음성 설정을 사용합니다.",
+      "UUID": "com.potaler.orca.navigation.dictation",
+      "Icon": "assets/dictation.png",
+      "PropertyInspectorPath": "inspector.html",
+      "States": [
+        {
+          "Name": "받아쓰기",
+          "Image": "assets/dictation.png",
+          "Title": "받아쓰기"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false,
+      "Controllers": [
+        "Keypad"
+      ],
+      "Devices": [
+        "D200X"
+      ]
+    },
+    {
+      "Name": "새 에이전트 탭",
+      "Tooltip": "macOS: ⌘⌥T. Windows 기본 단축키는 없습니다.",
+      "UUID": "com.potaler.orca.navigation.newAgent",
+      "Icon": "assets/newAgent.png",
+      "PropertyInspectorPath": "inspector.html",
+      "States": [
+        {
+          "Name": "새 에이전트 탭",
+          "Image": "assets/newAgent.png",
+          "Title": "새 에이전트 탭"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false,
+      "Controllers": [
+        "Keypad"
+      ],
+      "Devices": [
+        "D200X"
+      ]
+    },
+    {
+      "Name": "마우스 휠",
+      "Tooltip": "왼쪽=위, 오른쪽=아래. 마우스 포인터 위치를 스크롤합니다. Orca를 자동 활성화하지 않습니다.",
+      "UUID": "com.potaler.orca.navigation.wheelDial",
+      "Icon": "assets/wheelDial.png",
+      "PropertyInspectorPath": "inspector.html",
+      "States": [
+        {
+          "Name": "마우스 휠",
+          "Image": "assets/wheelDial.png",
+          "Title": "마우스 휠"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false,
+      "Controllers": [
+        "Encoder"
+      ],
+      "Devices": [
+        "D200",
+        "D200X",
+        "AU05"
+      ],
+      "Encoder": {
+        "layout": "$UA1"
+      }
+    }
+  ],
+  "Detail": "독립 제작 Ulanzi Studio용 플러그인입니다. Orca 열기, 이전·다음 워크트리와 모든 탭, 사이드바, Enter/Esc, 받아쓰기, 새 에이전트 탭, 탐색 노브와 마우스 휠을 제공합니다. 검증: D200X / Apple Silicon / macOS 27.0.1 / Orca 1.4.258 / Studio 3.4.8. Orca를 먼저 설치하세요. 프리셋은 별도 가져오기하고 앱 연결을 직접 지정합니다. Enter는 메시지를 전송할 수 있고 Esc는 포커스에 따릅니다. 휠은 포인터 위치를 스크롤합니다. Windows 실기 미검증, Intel Mac 휠 미지원. Orca·Ulanzi의 공식 제품이 아닙니다. Windows 지원을 제공합니다. 새 에이전트 탭은 macOS 전용입니다.",
+  "Banner": [
+    "assets/marketplace/banner.png"
+  ]
+}

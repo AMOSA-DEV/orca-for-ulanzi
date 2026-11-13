@@ -1,0 +1,148 @@
+{
+  "Name": "Orca",
+  "Category": "Orca",
+  "Description": "Control Orca worktrees, tabs, sidebars and scrolling with D200X keys and dials.",
+  "Actions": [
+    {
+      "Name": "Open Orca",
+      "Tooltip": "Open Orca or bring it to the front.",
+      "States": [
+        {
+          "Name": "Open Orca",
+          "Title": "Orca"
+        }
+      ]
+    },
+    {
+      "Name": "Previous worktree",
+      "Tooltip": "Navigate Orca. Wrap around at either end.",
+      "States": [
+        {
+          "Name": "Previous worktree",
+          "Title": "Previous worktree"
+        }
+      ]
+    },
+    {
+      "Name": "Next worktree",
+      "Tooltip": "Navigate Orca. Wrap around at either end.",
+      "States": [
+        {
+          "Name": "Next worktree",
+          "Title": "Next worktree"
+        }
+      ]
+    },
+    {
+      "Name": "Previous tab (all types)",
+      "Tooltip": "Navigate Orca. Wrap around at either end.",
+      "States": [
+        {
+          "Name": "Previous tab (all types)",
+          "Title": "Previous tab (all types)"
+        }
+      ]
+    },
+    {
+      "Name": "Next tab (all types)",
+      "Tooltip": "Navigate Orca. Wrap around at either end.",
+      "States": [
+        {
+          "Name": "Next tab (all types)",
+          "Title": "Next tab (all types)"
+        }
+      ]
+    },
+    {
+      "Name": "Worktree navigation dial",
+      "Tooltip": "Navigate Orca. Wrap around at either end.",
+      "States": [
+        {
+          "Name": "Worktree navigation dial",
+          "Title": "Worktree navigation dial"
+        }
+      ]
+    },
+    {
+      "Name": "Tab navigation dial (all types)",
+      "Tooltip": "Navigate Orca. Wrap around at either end.",
+      "States": [
+        {
+          "Name": "Tab navigation dial (all types)",
+          "Title": "Tab navigation dial (all types)"
+        }
+      ]
+    },
+    {
+      "Name": "Toggle Left Sidebar",
+      "Tooltip": "Cmd+B / Ctrl+B",
+      "States": [
+        {
+          "Name": "Toggle Left Sidebar",
+          "Title": "Toggle Left Sidebar"
+        }
+      ]
+    },
+    {
+      "Name": "Toggle Right Sidebar",
+      "Tooltip": "Cmd+L / Ctrl+L",
+      "States": [
+        {
+          "Name": "Toggle Right Sidebar",
+          "Title": "Toggle Right Sidebar"
+        }
+      ]
+    },
+    {
+      "Name": "Confirm (Enter)",
+      "Tooltip": "Send Enter to the current focus. This may submit composer text.",
+      "States": [
+        {
+          "Name": "Confirm (Enter)",
+          "Title": "Confirm (Enter)"
+        }
+      ]
+    },
+    {
+      "Name": "Cancel (Esc)",
+      "Tooltip": "Send Esc to the current focus. Orca may stop work, cancel, or close a menu.",
+      "States": [
+        {
+          "Name": "Cancel (Esc)",
+          "Title": "Cancel (Esc)"
+        }
+      ]
+    },
+    {
+      "Name": "Dictation",
+      "Tooltip": "Cmd+E / Ctrl+E. Uses existing Orca voice settings.",
+      "States": [
+        {
+          "Name": "Dictation",
+          "Title": "Dictation"
+        }
+      ]
+    },
+    {
+      "Name": "New Agent Tab",
+      "Tooltip": "macOS: Cmd+Option+T. No Windows default shortcut.",
+      "States": [
+        {
+          "Name": "New Agent Tab",
+          "Title": "New Agent Tab"
+        }
+      ]
+    },
+    {
+      "Name": "Mouse wheel",
+      "Tooltip": "Left=up, right=down. Scrolls at the mouse pointer without activating Orca.",
+      "States": [
+        {
+          "Name": "Mouse wheel",
+          "Title": "Mouse wheel"
+        }
+      ]
+    }
+  ],
+  "Detail": "Independent Ulanzi Studio plugin: launch Orca, navigate worktrees and all tabs, toggle sidebars, Enter/Esc, dictation, new agent tab and 3 dial actions. Tested: D200X, Apple Silicon, macOS 27.0.1, Orca 1.4.258, Studio 3.4.8. Install Orca first. Import the profile separately; set its app association manually. Enter may send text; Esc follows focus; scrolling follows the pointer. Windows untested; Intel Mac wheel unsupported. Not an official Orca or Ulanzi product. Windows support is available; New Agent Tab is macOS-only."
+}
