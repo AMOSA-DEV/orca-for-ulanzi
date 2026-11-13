@@ -1,0 +1,17 @@
+name: Feature request / 기능 제안 / 功能建议 / 機能提案
+description: Suggest an improvement. English, 한국어, 简体中文, 日本語 welcome.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case / 사용 목적 / 使用场景 / 利用目的
+      description: What are you trying to do, and what is difficult today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed improvement / 개선 제안 / 改进建议 / 改善案
+      description: Describe the desired behavior, platform and deck model. Include alternatives if useful.
+    validations:
+      required: true

@@ -57,3 +57,5 @@ AMOSA 的项目代码采用 [MIT 许可证](LICENSE)。Orca 图标和第三方�
 ## 项目维护
 
 `main` 为公开发布基线，`dev` 为开发分支。问题和建议请提交至 [Issues](https://github.com/AMOSA-DEV/orca-for-ulanzi/issues)。本项目独立于 [Orca 官方项目](https://github.com/stablyai/orca)维护，非 Orca 或 Ulanzi 官方产品。
+
+欢迎代码、翻译和实机测试贡献。请阅读[贡献指南](CONTRIBUTING.md#简体中文)，PR 目标分支设为 `dev`。

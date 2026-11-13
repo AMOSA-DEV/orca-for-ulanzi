@@ -57,3 +57,5 @@ AMOSA のプロジェクトコードは [MIT ライセンス](LICENSE)で公開�
 ## プロジェクト管理
 
 `main` は公開リリースの基準、`dev` は開発ブランチです。不具合や提案は [Issues](https://github.com/AMOSA-DEV/orca-for-ulanzi/issues) にお寄せください。[Orca 公式プロジェクト](https://github.com/stablyai/orca)とは独立して管理されるコミュニティプロジェクトであり、Orca・Ulanzi の公式製品ではありません。
+
+コード・翻訳・実機テストの貢献を歓迎します。[貢献ガイド](CONTRIBUTING.md#日本語)を確認し、PR の対象を `dev` にしてください。

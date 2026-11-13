@@ -60,3 +60,5 @@ AMOSA의 프로젝트 코드는 [MIT](LICENSE)로 배포합니다. Orca 아이�
 ## 프로젝트 관리
 
 `main`은 공개 배포 기준, `dev`는 개발 브랜치입니다. 문제·개선 제안은 [Issues](https://github.com/AMOSA-DEV/orca-for-ulanzi/issues)에 남겨주세요. [Orca 공식 저장소](https://github.com/stablyai/orca)와 별개로 관리되는 커뮤니티 프로젝트입니다.
+
+코드·번역·실기 검증 기여를 환영합니다. [기여 안내](CONTRIBUTING.md#한국어)를 확인하고 PR 대상은 `dev`로 설정해 주세요.

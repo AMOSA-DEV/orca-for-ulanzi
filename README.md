@@ -57,3 +57,5 @@ AMOSA's project code is available under the [MIT License](LICENSE). The Orca ico
 ## Project maintenance
 
 `main` is the public release baseline; `dev` is the development branch. Report bugs and suggestions in [Issues](https://github.com/AMOSA-DEV/orca-for-ulanzi/issues). This community project is maintained independently of [Orca](https://github.com/stablyai/orca) and is not an official Orca or Ulanzi product.
+
+Contributions, translations and device testing are welcome. See the [contributor guide](CONTRIBUTING.md#english); open pull requests against `dev`.

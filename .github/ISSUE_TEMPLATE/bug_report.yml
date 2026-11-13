@@ -1,0 +1,22 @@
+name: Bug report / 버그 / 问题 / 不具合
+description: Report a reproducible problem. English, 한국어, 简体中文, 日本語 welcome.
+body:
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment / 사용 환경 / 使用环境 / 利用環境
+      description: OS and CPU, Orca version, Ulanzi Studio version, plugin version, deck model.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce / 재현 순서 / 复现步骤 / 再現手順
+      description: Include the affected button or dial, expected result and actual result. Did fully quitting and reopening Studio help?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or screenshots / 로그·화면 / 日志或截图 / ログ・画面
+      description: Optional. Remove personal information and local paths before sharing.
