@@ -142,6 +142,46 @@
           "Title": "Mouse wheel"
         }
       ]
+    },
+    {
+      "Name": "Previous pane",
+      "Tooltip": "Move focus between split panes. Windows only.",
+      "States": [
+        {
+          "Name": "Previous pane",
+          "Title": "Previous pane"
+        }
+      ]
+    },
+    {
+      "Name": "Next pane",
+      "Tooltip": "Move focus between split panes. Windows only.",
+      "States": [
+        {
+          "Name": "Next pane",
+          "Title": "Next pane"
+        }
+      ]
+    },
+    {
+      "Name": "Close pane",
+      "Tooltip": "Close the active split pane. Windows only.",
+      "States": [
+        {
+          "Name": "Close pane",
+          "Title": "Close pane"
+        }
+      ]
+    },
+    {
+      "Name": "Split pane dial",
+      "Tooltip": "Move focus between split panes with the dial. Windows only.",
+      "States": [
+        {
+          "Name": "Split pane dial",
+          "Title": "Split pane dial"
+        }
+      ]
     }
   ],
   "Detail": "Independent Ulanzi Studio plugin: launch Orca, navigate worktrees and all tabs, toggle sidebars, Enter/Esc, dictation, new agent tab and 3 dial actions. Tested: D200X, Apple Silicon, macOS 27.0.1, Orca 1.4.258, Studio 3.4.8. Install Orca first. Import the profile separately; set its app association manually. Enter may send text; Esc follows focus; scrolling follows the pointer. Windows untested; Intel Mac wheel unsupported. Not an official Orca or Ulanzi product. Windows support is available; New Agent Tab is macOS-only."

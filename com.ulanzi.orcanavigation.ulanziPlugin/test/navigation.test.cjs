@@ -1,6 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { createNavigator } = require('../navigation.cjs');
+const { createNavigator, createWinSession } = require('../navigation.cjs');
 
 function harness(overrides = {}) {
   const calls = [];
@@ -14,7 +14,7 @@ function harness(overrides = {}) {
     if (overrides.result) result = overrides.result(args, result);
     return { stdout: JSON.stringify({ ok: true, result }) };
   };
-  return { calls, navigate: createNavigator({ nativePath: null, platform: 'darwin', ...overrides, invoke: overrides.invoke || invoke }) };
+  return { calls, navigate: createNavigator({ nativePath: null, winNativePath: null, platform: 'darwin', ...overrides, invoke: overrides.invoke || invoke }) };
 }
 
 test('Mac direct input runs one helper without CLI or screen queries', async () => {
@@ -90,7 +90,7 @@ test('Windows uses Ctrl and preserves a path with spaces as one argument', async
 
 test('busy inputs are rejected rather than replayed later', async () => {
   let release;
-  const navigate = createNavigator({ nativePath: null, invoke: () => new Promise(resolve => { release = resolve; }) });
+  const navigate = createNavigator({ platform: 'darwin', nativePath: null, invoke: () => new Promise(resolve => { release = resolve; }) });
   const pending = navigate('workspace', 'next');
   await assert.rejects(navigate('workspace', 'previous'), /처리 중/);
   release({ stdout: '{"ok":false,"error":{"code":"app_not_found"}}' });
@@ -182,4 +182,47 @@ test('wheel uses native directions or Windows wheel helper without querying Orca
   }
   const intel = createNavigator({ platform: 'darwin', nativePath: null });
   await assert.rejects(intel('wheel', 'next'), /Apple Silicon/);
+});
+
+test('Windows direct input runs one native helper without CLI or screen queries', async () => {
+  const calls = [];
+  const navigate = createNavigator({ platform: 'win32', winNativePath: 'C:\plugin\native\windows-navigation.exe',
+    invoke: async (...args) => { calls.push(args); return { stdout: '{"ok":true,"delivered":true}' }; } });
+  await navigate('shortcut', 'cancel'); await navigate('workspace', 'next'); await navigate('chat', 'previous'); await navigate('app', 'open'); await navigate('pane', 'next');
+  assert.deepEqual(calls.map(c => c[1]), [['shortcut', 'cancel'], ['workspace', 'next'], ['chat', 'previous'], ['app', 'open'], ['pane', 'next']]);
+  assert.ok(calls.every(c => c[0] === 'C:\plugin\native\windows-navigation.exe' && c[2].shell === false));
+  await navigate('shortcut', 'newAgent'); await navigate('shortcut', 'closePane');
+  assert.deepEqual(calls.slice(-2).map(c => c[1]), [['shortcut', 'newAgent'], ['shortcut', 'closePane']]);
+  const failed = createNavigator({ platform: 'win32', winNativePath: 'x.exe', invoke: async () => {
+    throw Object.assign(new Error('exit 1'), { stdout: '{"ok":false,"error":"Orca를 활성화하지 못했습니다."}' });
+  } });
+  await assert.rejects(failed('chat', 'next'), /활성화/);
+});
+
+test('split pane navigation is Windows-only', async () => {
+  const mac = createNavigator({ platform: 'darwin', nativePath: '/helper', invoke: async () => ({ stdout: '{"ok":true,"delivered":true}' }) });
+  await assert.rejects(mac('pane', 'next'), /Windows/);
+});
+
+test('resident Windows helper answers many commands over one process and recovers from a crash', async () => {
+  const { EventEmitter } = require('node:events');
+  const spawned = [];
+  const fakeSpawn = () => {
+    const c = new EventEmitter();
+    c.exitCode = null; c.killed = false; c.kill = () => { c.killed = true; };
+    c.stdout = new EventEmitter(); c.stdout.setEncoding = () => {};
+    c.stdin = new EventEmitter();
+    c.stdin.write = (line) => { c.lines = [...(c.lines || []), line.trim()];
+      setImmediate(() => c.stdout.emit('data', '{"ok":true,"delivered":true}\n')); };
+    spawned.push(c); return c;
+  };
+  const request = createWinSession('x.exe', fakeSpawn, 200);
+  const navigate = createNavigator({ platform: 'win32', winNativePath: 'x.exe', winSession: request, invoke: async () => { throw new Error('unused'); } });
+  await navigate('shortcut', 'cancel'); await navigate('chat', 'next'); await navigate('wheel', 'next');
+  assert.equal(spawned.length, 1);
+  assert.deepEqual(spawned[0].lines, ['shortcut cancel', 'chat next', 'wheel next']);
+  spawned[0].exitCode = 1; spawned[0].emit('exit');
+  await navigate('pane', 'previous');
+  assert.equal(spawned.length, 2);
+  assert.deepEqual(spawned[1].lines, ['pane previous']);
 });

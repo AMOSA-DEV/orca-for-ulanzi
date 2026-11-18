@@ -11,7 +11,8 @@ const actions = {
   workspacePrevious: ['workspace', 'previous'], workspaceNext: ['workspace', 'next'],
   // Existing chat UUIDs remain stable so saved device assignments survive all-tab navigation.
   chatPrevious: ['chat', 'previous'], chatNext: ['chat', 'next'],
-  workspaceDial: ['workspace'], chatDial: ['chat'], wheelDial: ['wheel']
+  panePrevious: ['pane', 'previous'], paneNext: ['pane', 'next'], closePane: ['shortcut', 'closePane'],
+  workspaceDial: ['workspace'], chatDial: ['chat'], paneDial: ['pane'], wheelDial: ['wheel']
 };
 
 function createHandler(send, navigate = createNavigator(), signal, language = 'en') {

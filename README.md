@@ -9,11 +9,11 @@ Independent plugin by **AMOSA** for controlling Orca with Ulanzi Creative Deck D
 ## Features
 
 - Launch Orca; previous/next worktree and tabs of every type
-- Toggle both sidebars; Enter, Escape, dictation; new agent tab (macOS only)
+- Toggle both sidebars; Enter, Escape, dictation; new agent tab (needs an Orca shortcut on Windows)
 - Worktree navigation, all-tab navigation and mouse-wheel dials
 - English, Korean, Simplified Chinese and Japanese interface
 
-Enter may send a message. Enter/Escape follow the current focus and do not identify approval requests. Scrolling follows the mouse pointer.
+Enter may send a message. Enter/Escape follow the current focus and do not identify approval requests. On macOS scrolling follows the mouse pointer; on Windows it follows the terminal that has keyboard focus. Split-pane navigation and closing the focused pane (pane dial, previous/next pane, close pane) are Windows-only because the macOS helper does not implement them; macOS users who want them are welcome to implement and contribute them.
 
 ## Compatibility
 

@@ -49,10 +49,34 @@ for previous in [True, False]:
     line(draw, [(tail,y-21),(x,y),(tail,y+21)], BLUE, 8)
     save(image, 'chatPrevious.png' if previous else 'chatNext.png')
 
+for previous in [True, False]:
+    image, draw = canvas()
+    # Two split panes side by side, with the destination pane highlighted.
+    for x, active in [(31,previous),(100,not previous)]:
+        color = BLUE if active else '#7690A3'
+        box=tuple(v*SCALE for v in [x,45,x+65,105])
+        draw.rounded_rectangle(box,radius=8*SCALE,outline=color,width=5*SCALE)
+    y=137
+    line(draw, [(49,y),(147,y)], WHITE, 8)
+    x=49 if previous else 147
+    tail=x+22 if previous else x-22
+    line(draw, [(tail,y-21),(x,y),(tail,y+21)], BLUE, 8)
+    save(image, 'panePrevious.png' if previous else 'paneNext.png')
+
+# Close the active split pane: two panes, the active one crossed out.
+image, draw = canvas()
+for x, active in [(31, False), (100, True)]:
+    color = BLUE if active else '#7690A3'
+    draw.rounded_rectangle(tuple(v*SCALE for v in [x,45,x+65,125]), radius=8*SCALE, outline=color, width=5*SCALE)
+line(draw, [(118,67),(147,103)], WHITE, 8)
+line(draw, [(147,67),(118,103)], WHITE, 8)
+save(image, 'closePane.png')
+
 # Preserve the checked-in Orca app artwork and its attribution.
 # Dial icons use the same source glyphs with both navigation directions.
 for name, left, right in [('workspaceDial.png', 'workspacePrevious.png', 'workspaceNext.png'),
-                          ('chatDial.png', 'chatPrevious.png', 'chatNext.png')]:
+                          ('chatDial.png', 'chatPrevious.png', 'chatNext.png'),
+                          ('paneDial.png', 'panePrevious.png', 'paneNext.png')]:
     image = Image.new('RGBA', (196,196), TRANSPARENT)
     for x, source in [(0,left), (98,right)]:
         glyph = Image.open(ASSETS/source).resize((98,98), Image.Resampling.LANCZOS)

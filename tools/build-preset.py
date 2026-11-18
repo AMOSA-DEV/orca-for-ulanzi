@@ -10,7 +10,8 @@ meta = json.loads((root / 'manifest.json').read_text())
 assert meta['Version'] == '2.0'
 assert meta['Device'] == {'Model': 'D200X', 'UUID': '00000000-0000-0000-0000-000000000000'}
 assert meta['Pages']['Current'] in meta['Pages']['Pages']
-expected = {a['UUID'] for a in plugin['Actions'] if a['Controllers'] in [['Keypad'], ['Encoder']]}
+OPTIONAL = {'com.potaler.orca.navigation.' + n for n in ['panePrevious', 'paneNext', 'closePane', 'paneDial']}  # Windows-only, not in the preset layout
+expected = {a['UUID'] for a in plugin['Actions'] if a['Controllers'] in [['Keypad'], ['Encoder']] and a['UUID'] not in OPTIONAL}
 found = []
 for page in meta['Pages']['Pages']:
     folder = root / 'Profiles' / page

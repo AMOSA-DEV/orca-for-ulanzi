@@ -142,6 +142,46 @@
           "Title": "鼠标滚轮"
         }
       ]
+    },
+    {
+      "Name": "上一个分屏窗格",
+      "Tooltip": "在分屏窗格之间移动焦点。仅限 Windows。",
+      "States": [
+        {
+          "Name": "上一个分屏窗格",
+          "Title": "上一个分屏窗格"
+        }
+      ]
+    },
+    {
+      "Name": "下一个分屏窗格",
+      "Tooltip": "在分屏窗格之间移动焦点。仅限 Windows。",
+      "States": [
+        {
+          "Name": "下一个分屏窗格",
+          "Title": "下一个分屏窗格"
+        }
+      ]
+    },
+    {
+      "Name": "关闭分屏窗格",
+      "Tooltip": "关闭当前分屏窗格。仅限 Windows。",
+      "States": [
+        {
+          "Name": "关闭分屏窗格",
+          "Title": "关闭分屏窗格"
+        }
+      ]
+    },
+    {
+      "Name": "分屏窗格切换旋钮",
+      "Tooltip": "用旋钮在分屏窗格之间移动焦点。仅限 Windows。",
+      "States": [
+        {
+          "Name": "分屏窗格切换旋钮",
+          "Title": "分屏窗格切换旋钮"
+        }
+      ]
     }
   ],
   "Detail": "独立制作的 Ulanzi Studio 插件。支持启动 Orca、切换工作树与所有标签页、侧边栏切换、Enter/Esc、听写、新建智能体标签页、旋钮导航和滚动。验证：D200X / Apple Silicon / macOS 27.0.1 / Orca 1.4.258 / Studio 3.4.8。请先安装 Orca。预设需单独导入并手动关联应用。Enter 可能发送消息；Esc 取决于焦点。滚轮作用于指针位置。Windows 未经实机验证；Intel Mac 不支持滚轮。非 Orca 或 Ulanzi 官方产品。 Windows 支持已开放；新建智能体标签页仅支持 macOS。"

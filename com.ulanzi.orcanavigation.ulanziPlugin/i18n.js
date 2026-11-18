@@ -42,6 +42,13 @@
     "워크트리 목록은 Mac에서 ⌘⇧0, Windows에서 Ctrl+Shift+0 후 ↑/↓, 탭(모든 유형)은 Mac에서 ⌘⇧[/], Windows에서 Ctrl+Shift+[/]를 전달합니다. 회전은 왼쪽=이전, 오른쪽=다음입니다. 누름·누른 채 회전은 사용하지 않습니다. 처리 중 추가 입력은 버립니다.": "워크트리 목록은 Mac에서 ⌘⇧0, Windows에서 Ctrl+Shift+0 후 ↑/↓, 탭(모든 유형)은 Mac에서 ⌘⇧[/], Windows에서 Ctrl+Shift+[/]를 전달합니다. 회전은 왼쪽=이전, 오른쪽=다음입니다. 누름·누른 채 회전은 사용하지 않습니다. 처리 중 추가 입력은 버립니다.",
     "확인은 Enter, 취소는 Esc를 현재 포커스에 보냅니다. 입력창에서는 전송, 메뉴에서는 선택·닫기로 동작할 수 있습니다. 받아쓰기는 기존 음성 설정을 사용합니다. 새 에이전트 탭은 macOS 전용입니다.": "확인은 Enter, 취소는 Esc를 현재 포커스에 보냅니다. 입력창에서는 전송, 메뉴에서는 선택·닫기로 동작할 수 있습니다. 받아쓰기는 기존 음성 설정을 사용합니다. 새 에이전트 탭은 macOS 전용입니다.",
     "새 에이전트 탭 기본 단축키는 macOS에서만 지원합니다.": "새 에이전트 탭 기본 단축키는 macOS에서만 지원합니다.",
+    "분할 창 이동은 Windows에서만 지원합니다.": "분할 창 이동은 Windows에서만 지원합니다.",
+    "분할 창 닫기는 Windows에서만 지원합니다.": "분할 창 닫기는 Windows에서만 지원합니다.",
+    "Orca 터미널에 포커스가 없습니다.": "Orca 터미널에 포커스가 없습니다.",
+    "포커스된 요소를 읽지 못했습니다.": "포커스된 요소를 읽지 못했습니다.",
+    "Orca를 활성화하지 못했습니다. 다른 창이 포커스를 막고 있습니다.": "Orca를 활성화하지 못했습니다. 다른 창이 포커스를 막고 있습니다.",
+    "Orca 앱이 실행되어 있어야 합니다.": "Orca 앱이 실행되어 있어야 합니다.",
+    "키 입력 실행 실패. Orca 실행 상태를 확인하세요.": "키 입력 실행 실패. Orca 실행 상태를 확인하세요.",
     "빠른 키 입력 실행 실패. Orca 실행 상태를 확인하세요.": "빠른 키 입력 실행 실패. Orca 열기 상태를 확인하세요."
   },
   "en": {
@@ -85,6 +92,13 @@
     "워크트리 목록은 Mac에서 ⌘⇧0, Windows에서 Ctrl+Shift+0 후 ↑/↓, 탭(모든 유형)은 Mac에서 ⌘⇧[/], Windows에서 Ctrl+Shift+[/]를 전달합니다. 회전은 왼쪽=이전, 오른쪽=다음입니다. 누름·누른 채 회전은 사용하지 않습니다. 처리 중 추가 입력은 버립니다.": "Worktree list: Cmd+Shift+0 on Mac or Ctrl+Shift+0 on Windows, then ↑/↓. Tabs (all types): Cmd+Shift+[/] on Mac or Ctrl+Shift+[/] on Windows. Dial: left = previous, right = next. Pressing and turning while pressed are unused. Extra input is discarded while busy.",
     "확인은 Enter, 취소는 Esc를 현재 포커스에 보냅니다. 입력창에서는 전송, 메뉴에서는 선택·닫기로 동작할 수 있습니다. 받아쓰기는 기존 음성 설정을 사용합니다. 새 에이전트 탭은 macOS 전용입니다.": "Confirm sends Enter and Cancel sends Esc to the current focus. They may submit composer text or select/close a menu. Dictation uses existing voice settings. New Agent Tab is macOS only.",
     "새 에이전트 탭 기본 단축키는 macOS에서만 지원합니다.": "The default New Agent Tab shortcut is available only on macOS.",
+    "분할 창 이동은 Windows에서만 지원합니다.": "Split pane navigation is available only on Windows.",
+    "분할 창 닫기는 Windows에서만 지원합니다.": "Closing a pane is available only on Windows.",
+    "Orca 터미널에 포커스가 없습니다.": "Orca terminal is not focused.",
+    "포커스된 요소를 읽지 못했습니다.": "Could not read the focused element.",
+    "Orca를 활성화하지 못했습니다. 다른 창이 포커스를 막고 있습니다.": "Could not bring Orca to the front. Another window is holding focus.",
+    "Orca 앱이 실행되어 있어야 합니다.": "Orca must be running.",
+    "키 입력 실행 실패. Orca 실행 상태를 확인하세요.": "Key input failed. Check that Orca is running.",
     "빠른 키 입력 실행 실패. Orca 실행 상태를 확인하세요.": "Direct key input failed. Check that Orca is running."
   },
   "zh": {
@@ -128,6 +142,13 @@
     "워크트리 목록은 Mac에서 ⌘⇧0, Windows에서 Ctrl+Shift+0 후 ↑/↓, 탭(모든 유형)은 Mac에서 ⌘⇧[/], Windows에서 Ctrl+Shift+[/]를 전달합니다. 회전은 왼쪽=이전, 오른쪽=다음입니다. 누름·누른 채 회전은 사용하지 않습니다. 처리 중 추가 입력은 버립니다.": "侧边栏：Mac 上使用 Cmd+Shift+0，Windows 上使用 Ctrl+Shift+0，然后按 ↑/↓。所有标签页：Mac 上使用 Cmd+Shift+[/]，Windows 上使用 Ctrl+Shift+[/]。旋钮向左为上一个，向右为下一个。不使用按下或按住旋转操作。处理过程中会丢弃额外输入。",
     "확인은 Enter, 취소는 Esc를 현재 포커스에 보냅니다. 입력창에서는 전송, 메뉴에서는 선택·닫기로 동작할 수 있습니다. 받아쓰기는 기존 음성 설정을 사용합니다. 새 에이전트 탭은 macOS 전용입니다.": "确认向当前焦点发送 Enter，取消发送 Esc。可能发送输入框内容，或选择/关闭菜单。听写使用现有语音设置。新建代理标签页仅限 macOS。",
     "새 에이전트 탭 기본 단축키는 macOS에서만 지원합니다.": "新建代理标签页的默认快捷键仅适用于 macOS。",
+    "분할 창 이동은 Windows에서만 지원합니다.": "分屏窗格切换仅适用于 Windows。",
+    "분할 창 닫기는 Windows에서만 지원합니다.": "关闭分屏窗格仅适用于 Windows。",
+    "Orca 터미널에 포커스가 없습니다.": "Orca 终端没有焦点。",
+    "포커스된 요소를 읽지 못했습니다.": "无法读取当前焦点元素。",
+    "Orca를 활성화하지 못했습니다. 다른 창이 포커스를 막고 있습니다.": "无法激活 Orca，其他窗口占用了焦点。",
+    "Orca 앱이 실행되어 있어야 합니다.": "需要先运行 Orca。",
+    "키 입력 실행 실패. Orca 실행 상태를 확인하세요.": "按键输入失败，请确认 Orca 正在运行。",
     "빠른 키 입력 실행 실패. Orca 실행 상태를 확인하세요.": "直接按键输入失败，请确认 Orca 正在运行。"
   },
   "ja": {
@@ -171,6 +192,13 @@
     "워크트리 목록은 Mac에서 ⌘⇧0, Windows에서 Ctrl+Shift+0 후 ↑/↓, 탭(모든 유형)은 Mac에서 ⌘⇧[/], Windows에서 Ctrl+Shift+[/]를 전달합니다. 회전은 왼쪽=이전, 오른쪽=다음입니다. 누름·누른 채 회전은 사용하지 않습니다. 처리 중 추가 입력은 버립니다.": "一覧：Mac は Cmd+Shift+0、Windows は Ctrl+Shift+0 の後に ↑/↓。全タブ：Mac は Cmd+Shift+[/]、Windows は Ctrl+Shift+[/]。ダイヤルは左が前、右が次です。押下と押しながらの回転は使用しません。処理中の追加入力は破棄します。",
     "확인은 Enter, 취소는 Esc를 현재 포커스에 보냅니다. 입력창에서는 전송, 메뉴에서는 선택·닫기로 동작할 수 있습니다. 받아쓰기는 기존 음성 설정을 사용합니다. 새 에이전트 탭은 macOS 전용입니다.": "確認は Enter、キャンセルは Esc を現在のフォーカスに送信します。入力欄の送信やメニューの選択・終了になる場合があります。音声入力は既存の設定を使用します。新しいエージェントタブは macOS のみです。",
     "새 에이전트 탭 기본 단축키는 macOS에서만 지원합니다.": "新しいエージェントタブの既定ショートカットは macOS のみです。",
+    "분할 창 이동은 Windows에서만 지원합니다.": "分割ペインの移動は Windows のみ対応です。",
+    "분할 창 닫기는 Windows에서만 지원합니다.": "分割ペインを閉じる操作は Windows のみ対応です。",
+    "Orca 터미널에 포커스가 없습니다.": "Orca のターミナルにフォーカスがありません。",
+    "포커스된 요소를 읽지 못했습니다.": "フォーカス中の要素を読み取れませんでした。",
+    "Orca를 활성화하지 못했습니다. 다른 창이 포커스를 막고 있습니다.": "Orca を前面に出せませんでした。別のウィンドウがフォーカスを保持しています。",
+    "Orca 앱이 실행되어 있어야 합니다.": "Orca を起動してください。",
+    "키 입력 실행 실패. Orca 실행 상태를 확인하세요.": "キー入力に失敗しました。Orca の起動状態を確認してください。",
     "빠른 키 입력 실행 실패. Orca 실행 상태를 확인하세요.": "直接キー入力に失敗しました。Orca が起動しているか確認してください。"
   }
 };

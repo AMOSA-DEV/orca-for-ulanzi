@@ -1,25 +1,85 @@
 'use strict';
-const { execFile } = require('node:child_process');
+const { execFile, spawn } = require('node:child_process');
 const { promisify } = require('node:util');
 const path = require('node:path');
 const execute = promisify(execFile);
 const { createWheel } = require('./wheel.cjs');
 
-const SHORTCUTS = { leftPanel: 'B', rightPanel: 'L', confirm: 'Return', cancel: 'Escape', dictation: 'E', newAgent: 'Alt+T' };
+const SHORTCUTS = { leftPanel: 'B', rightPanel: 'L', confirm: 'Return', cancel: 'Escape', dictation: 'E', newAgent: 'Alt+T', closePane: 'W' };
 
 const MAC_CLI = '/Applications/Orca.app/Contents/Resources/app.asar.unpacked/out/cli/index.js';
 
+// Resident Windows helper. Starting a process costs 1s+ on machines with endpoint scanners, so one
+// `windows-navigation.exe serve` stays alive and answers "scope direction" lines one at a time.
+function createWinSession(exe, spawnFn = spawn, timeoutMs = 5000) {
+  let child = null;
+  let queue = Promise.resolve();
+  function ensure() {
+    if (child && !child.killed && child.exitCode === null) return child;
+    const c = spawnFn(exe, ['serve'], { windowsHide: true, stdio: ['pipe', 'pipe', 'ignore'] });
+    let buffer = '';
+    c.pending = null;
+    c.stdout.setEncoding('utf8');
+    c.stdout.on('data', (chunk) => {
+      buffer += chunk;
+      let index;
+      while ((index = buffer.indexOf('\n')) >= 0) {
+        const line = buffer.slice(0, index);
+        buffer = buffer.slice(index + 1);
+        const waiting = c.pending;
+        c.pending = null;
+        if (waiting) waiting.resolve(line);
+      }
+    });
+    const fail = () => { const waiting = c.pending; c.pending = null; if (child === c) child = null; if (waiting) waiting.reject(new Error('helper exited')); };
+    c.on('exit', fail);
+    c.on('error', fail);
+    c.stdin.on('error', () => {});
+    child = c;
+    return c;
+  }
+  return function request(command, signal) {
+    const run = () => new Promise((resolve, reject) => {
+      if (signal?.aborted) return reject(new Error('aborted'));
+      const c = ensure();
+      const timer = setTimeout(() => { c.pending = null; if (child === c) child = null; c.kill(); reject(new Error('timeout')); }, timeoutMs);
+      c.pending = { resolve: (line) => { clearTimeout(timer); resolve(line); }, reject: (error) => { clearTimeout(timer); reject(error); } };
+      c.stdin.write(command + '\n');
+    });
+    const result = queue.then(run, run);
+    queue = result.catch(() => {});
+    return result;
+  };
+}
+
 function createNavigator({ platform = process.platform, invoke = execute,
-  nativePath = platform === 'darwin' && process.arch === 'arm64' ? path.join(__dirname, 'native/mac-navigation') : null, wheel = createWheel(nativePath) } = {}) {
+  nativePath = platform === 'darwin' && process.arch === 'arm64' ? path.join(__dirname, 'native/mac-navigation') : null, wheel = createWheel(nativePath),
+  winNativePath = platform === 'win32' ? path.join(__dirname, 'native/windows-navigation.exe') : null,
+  winSession = platform === 'win32' && winNativePath && invoke === execute ? createWinSession(winNativePath) : null } = {}) {
   let busy = false;
+  async function sessionCall(scope, direction, signal) {
+    let line;
+    try { line = await winSession(`${scope} ${direction}`, signal); }
+    catch (error) {
+      if (signal?.aborted) throw new Error('Studio 연결이 끊겨 이동을 중단했습니다.');
+      throw new Error('키 입력 실행 실패. Orca 실행 상태를 확인하세요.');
+    }
+    let result;
+    try { result = JSON.parse(line); } catch { throw new Error('키 입력 전달 실패'); }
+    if (result.ok !== true || result.delivered !== true) throw new Error(result.error || '키 입력 전달 실패');
+    return { delivered: true };
+  }
   return async function navigate(scope, direction, settings = {}, signal) {
     if (!(scope === 'shortcut' && Object.hasOwn(SHORTCUTS, direction)) && !(scope === 'app' && direction === 'open') &&
-      !(['workspace', 'chat', 'wheel'].includes(scope) && ['previous', 'next'].includes(direction))) {
+      !(['workspace', 'chat', 'pane', 'wheel'].includes(scope) && ['previous', 'next'].includes(direction))) {
       throw new Error('알 수 없는 탐색 동작입니다.');
     }
     if (!['darwin', 'win32'].includes(platform)) throw new Error('macOS·Windows 대상 플러그인입니다.');
-    if (platform === 'win32' && scope === 'shortcut' && direction === 'newAgent') throw new Error('새 에이전트 탭 기본 단축키는 macOS에서만 지원합니다.');
+    if (platform === 'darwin' && scope === 'pane') throw new Error('분할 창 이동은 Windows에서만 지원합니다.');
+    if (platform === 'darwin' && scope === 'shortcut' && direction === 'closePane') throw new Error('분할 창 닫기는 Windows에서만 지원합니다.');
+    if (platform === 'win32' && !winNativePath && scope === 'shortcut' && direction === 'newAgent') throw new Error('새 에이전트 탭 기본 단축키는 macOS에서만 지원합니다.');
     if (scope === 'wheel' && platform === 'darwin' && nativePath) return wheel(direction, signal);
+    if (scope === 'wheel' && platform === 'win32' && winSession) return sessionCall(scope, direction, signal);
     if (busy) throw new Error('이동 처리 중입니다. 잠시 후 다시 조작하세요.');
     if (platform === 'darwin' && scope === 'app') {
       busy = true;
@@ -40,6 +100,24 @@ function createNavigator({ platform = process.platform, invoke = execute,
           let detail;
           try { detail = JSON.parse(error.stdout).error; } catch {}
           throw new Error(detail || '빠른 키 입력 실행 실패. Orca 실행 상태를 확인하세요.');
+        }
+        const result = JSON.parse(output.stdout);
+        if (result.ok !== true || result.delivered !== true) throw new Error(result.error || '키 입력 전달 실패');
+        return { delivered: true };
+      } finally { busy = false; }
+    }
+    if (platform === 'win32' && scope !== 'wheel' && winNativePath) {
+      busy = true;
+      try {
+        if (signal?.aborted) throw new Error('Studio 연결이 끊겨 이동을 중단했습니다.');
+        if (winSession) return await sessionCall(scope, direction, signal);
+        let output;
+        try {
+          output = await invoke(winNativePath, [scope, direction], { timeout: 5000, maxBuffer: 4096, windowsHide: true, shell: false, signal });
+        } catch (error) {
+          let detail;
+          try { detail = JSON.parse(error.stdout).error; } catch {}
+          throw new Error(detail || '키 입력 실행 실패. Orca 실행 상태를 확인하세요.');
         }
         const result = JSON.parse(output.stdout);
         if (result.ok !== true || result.delivered !== true) throw new Error(result.error || '키 입력 전달 실패');
@@ -69,8 +147,8 @@ function createNavigator({ platform = process.platform, invoke = execute,
         try {
           output = await invoke(/\.js$/i.test(cli) ? process.execPath : cli,
             [...(/\.js$/i.test(cli) ? [cli] : []), ...args, '--json'],
-            { timeout: 10000, maxBuffer: 4 * 1024 * 1024, windowsHide: true, shell: false, signal });
-        } catch {
+            { timeout: 30000, maxBuffer: 4 * 1024 * 1024, windowsHide: true, shell: false, signal });
+        } catch (e) {
           throw new Error('Orca CLI 실행 실패. 경로·앱 실행 상태를 확인하세요.');
         }
         let response;
@@ -88,7 +166,7 @@ function createNavigator({ platform = process.platform, invoke = execute,
       const snapshot = () => call(['computer', 'get-app-state', ...target]);
       const foreground = platform === 'win32' || windows[0].isMinimized || windows[0].isOffscreen ? ['--restore-window'] : [];
       const mod = platform === 'darwin' ? 'Cmd' : 'Ctrl';
-      const key = (chord) => call(['computer', 'hotkey', '--key', chord, ...target, ...foreground, '--full-tree']);
+      const key = (chord) => call(['computer', /\+/.test(chord) ? 'hotkey' : 'press-key', '--key', chord, ...target, ...foreground, '--full-tree']);
       if (scope === 'shortcut') {
         const chord = ['confirm', 'cancel'].includes(direction) ? SHORTCUTS[direction] : `${mod}+${SHORTCUTS[direction]}`;
         await key(chord);
@@ -115,4 +193,4 @@ function createNavigator({ platform = process.platform, invoke = execute,
   };
 }
 
-module.exports = { createNavigator, MAC_CLI };
+module.exports = { createNavigator, createWinSession, MAC_CLI };
