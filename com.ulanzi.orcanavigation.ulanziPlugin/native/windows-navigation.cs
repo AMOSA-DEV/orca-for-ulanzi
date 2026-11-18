@@ -142,8 +142,8 @@ static class OrcaNavigation
         // Scrolls the pane that holds the keyboard caret, not whatever is under the mouse pointer.
         if (scope == "wheel") return Wheel(dir);
 
-        // Dictation goes to whatever window currently has focus; do not pull Orca to the foreground.
-        if (scope == "shortcut" && dir == "dictation")
+        // Dictation, Enter and Escape go to whatever window currently has focus; do not pull Orca to the foreground.
+        if (scope == "shortcut" && (dir == "dictation" || dir == "confirm" || dir == "cancel"))
         {
             var d = shortcuts[dir];
             Press(d.Key, d.Value);
