@@ -142,6 +142,14 @@ static class OrcaNavigation
         // Scrolls the pane that holds the keyboard caret, not whatever is under the mouse pointer.
         if (scope == "wheel") return Wheel(dir);
 
+        // Dictation goes to whatever window currently has focus; do not pull Orca to the foreground.
+        if (scope == "shortcut" && dir == "dictation")
+        {
+            var d = shortcuts[dir];
+            Press(d.Key, d.Value);
+            return null;
+        }
+
         IntPtr h = FindOrca();
         if (h == IntPtr.Zero) return "Orca 앱이 실행되어 있어야 합니다.";
         if (!Foreground(h)) return "Orca를 활성화하지 못했습니다. 다른 창이 포커스를 막고 있습니다.";
