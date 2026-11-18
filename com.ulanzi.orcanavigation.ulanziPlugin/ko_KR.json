@@ -142,6 +142,46 @@
           "Title": "마우스 휠"
         }
       ]
+    },
+    {
+      "Name": "이전 분할 창",
+      "Tooltip": "분할된 창 사이를 이동합니다. Windows 전용입니다.",
+      "States": [
+        {
+          "Name": "이전 분할 창",
+          "Title": "이전 분할 창"
+        }
+      ]
+    },
+    {
+      "Name": "다음 분할 창",
+      "Tooltip": "분할된 창 사이를 이동합니다. Windows 전용입니다.",
+      "States": [
+        {
+          "Name": "다음 분할 창",
+          "Title": "다음 분할 창"
+        }
+      ]
+    },
+    {
+      "Name": "분할 창 닫기",
+      "Tooltip": "현재 분할 창을 닫습니다. Windows 전용입니다.",
+      "States": [
+        {
+          "Name": "분할 창 닫기",
+          "Title": "분할 창 닫기"
+        }
+      ]
+    },
+    {
+      "Name": "분할 창 탐색 다이얼",
+      "Tooltip": "다이얼로 분할 창 사이를 이동합니다. Windows 전용입니다.",
+      "States": [
+        {
+          "Name": "분할 창 탐색 다이얼",
+          "Title": "분할 창 탐색 다이얼"
+        }
+      ]
     }
   ],
   "Detail": "독립 제작 Ulanzi Studio용 플러그인입니다. Orca 열기, 이전·다음 워크트리와 모든 탭, 사이드바, Enter/Esc, 받아쓰기, 새 에이전트 탭, 탐색 노브와 마우스 휠을 제공합니다. 검증: D200X / Apple Silicon / macOS 27.0.1 / Orca 1.4.258 / Studio 3.4.8. Orca를 먼저 설치하세요. 프리셋은 별도 가져오기하고 앱 연결을 직접 지정합니다. Enter는 메시지를 전송할 수 있고 Esc는 포커스에 따릅니다. 휠은 포인터 위치를 스크롤합니다. Windows 실기 미검증, Intel Mac 휠 미지원. Orca·Ulanzi의 공식 제품이 아닙니다. Windows 지원을 제공합니다. 새 에이전트 탭은 macOS 전용입니다."

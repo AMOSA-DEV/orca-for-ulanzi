@@ -22,11 +22,25 @@ Swift 헬퍼 수정 시 Apple Silicon Mac에서 다시 빌드합니다.
 xcrun swiftc -O com.ulanzi.orcanavigation.ulanziPlugin/native/mac-navigation.swift -o com.ulanzi.orcanavigation.ulanziPlugin/native/mac-navigation
 ```
 
-기존 arm64 실행 파일도 소스에 포함합니다. Windows 경로는 Orca CLI와 Windows PowerShell을 사용합니다. 서명·공증·자동 권한 변경은 제공하지 않습니다.
+기존 arm64 실행 파일도 소스에 포함합니다. Windows는 `native/windows-navigation.cs`를 .NET Framework 4 컴파일러로 빌드한 `windows-navigation.exe`를 사용합니다. 플러그인이 `serve` 모드로 상주시키고, 한 줄 명령(`범위 방향`)에 JSON 한 줄로 답합니다(호출당 약 60ms). 키 입력은 SendInput, 휠은 UI Automation으로 읽은 키보드 포커스 위치로 보내는 WM_MOUSEWHEEL입니다. 분할 창 이동·닫기는 이 헬퍼에만 있고 macOS에는 없습니다. 수정 후 PowerShell에서 다시 빌드합니다.
+
+```powershell
+$f = 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319'
+& "$f\csc.exe" -nologo -target:exe -optimize -r:"$f\WPF\UIAutomationClient.dll" -r:"$f\WPF\UIAutomationTypes.dll" -r:"$f\WPF\WindowsBase.dll" -out:windows-navigation.exe windows-navigation.cs
+```
+
+Orca CLI 경로는 헬퍼가 없을 때의 대체 경로로만 남아 있습니다. 서명·공증·자동 권한 변경은 제공하지 않습니다.
 
 아이콘 도형을 다시 그릴 때만 Pillow를 설치하고 `python3 tools/render-icons.py`를 실행합니다. 체크인된 Orca 앱 아이콘은 유지하며 미리보기는 dist/icons-preview.png에 저장합니다.
 
 프리셋은 ZIP 앞에 13바이트 `#Version: 2\n\n`이 필요합니다. `build-preset.py`가 헤더·14개 플러그인 동작·상대 이미지·버전·기기 UUID·ZIP 무결성을 검사합니다. 헤더 없는 일반 ZIP은 Studio에서 사용자 플러그인 버튼이 누락될 수 있습니다. manifest의 Profiles 자동 설치는 사용하지 않습니다.
+
+## 버튼 배치 규칙
+
+- 공용 배치의 원본은 `presets/` 하나뿐입니다. 바꿀 때는 `tools/build-preset.py`와 `presets/README.md`의 표를 함께 고치고 도구로 재생성합니다.
+- 본인 Ulanzi Studio 프로필(Windows `%APPDATA%\Ulanzi\UlanziDeck\ProfilesV2`, macOS `Application Support`)에서 버튼을 옮긴 것은 개인 설정입니다. 저장소에 반영되지 않으며 커밋하지 않습니다. 개인 프로필 파일을 `presets/`에 복사하지 마세요.
+- 공용 프리셋의 배치를 바꾸는 PR은 이유와 사용 환경(OS·기기)을 적고 유지보수자 검토를 받습니다.
+- 새 액션을 추가하면 manifest·4개 언어 카탈로그·아이콘을 함께 갱신합니다. 한 OS에서만 지원하는 액션은 `build-preset.py`의 `OPTIONAL`에 넣어 macOS 공용 프리셋 검증과 분리합니다.
 
 ## 검증 범위
 
